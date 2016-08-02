@@ -30,10 +30,10 @@ if [ "$commits_behind" != "0" ]; then
 fi
 
 # Checkout to last pushed commit and push code
-if [ $commits_ahead>=$pushing_limit ]; then
-	push_commits=$pushing_limit
-else
+if [ $commits_ahead -lt $pushing_limit ]; then
 	push_commits=$commits_ahead
+else
+	push_commits=$pushing_limit
 fi
 
 # Push commits
