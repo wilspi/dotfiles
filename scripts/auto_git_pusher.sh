@@ -37,15 +37,20 @@ else
 fi
 
 # Push commits
-git checkout HEAD~$(( $commits_ahead-$push_commits ))
-commit_sha="$(git rev-parse HEAD)"
-if [ "$verbose" = true ] ; then
-	echo "At commit: " $commit_sha " Pushing commits: " $push_commits
+if [ $(( $commits_ahead-$push_commits )) -gt "0" ]; then
+	git checkout HEAD~$(( $commits_ahead-$push_commits ))
+	commit_sha="$(git rev-parse HEAD)"
+	if [ "$verbose" = true ] ; then
+		echo "At commit: " $commit_sha " Pushing commits: " $push_commits
+	fi
+	git push origin $commit_sha:$branch_name
+else
+	echo "Origin is upto date."
 fi
-git push origin $commit_sha:$branch_name
 
 # Back to where HEAD was
 git checkout $branch_name
 
 # Show Git log graph
+echo "Git Log: "
 git log --pretty=oneline --abbrev-commit --graph --decorate --all
