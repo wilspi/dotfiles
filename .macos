@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Install Homebrew: The missing package manager for OS X
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# Install brew packages 
+./brew.sh
+
+
+
