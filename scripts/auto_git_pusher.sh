@@ -37,7 +37,7 @@ else
 fi
 
 # Push commits
-if [ $(( $commits_ahead-$push_commits )) -gt "0" ]; then
+if [ $(( $commits_ahead-$push_commits )) -gt "-1" ]; then
 	git checkout HEAD~$(( $commits_ahead-$push_commits )) --quiet
 	commit_sha="$(git rev-parse HEAD)"
 	if [ "$verbose" = true ]; then
