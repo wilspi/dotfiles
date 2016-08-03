@@ -1,8 +1,19 @@
 #!/usr/bin/env bash
 
 # Config
-pushing_limit=1 # No of commits to push at a time
 verbose=true # Verbose mode
+
+# No of commits to push at a time
+# Defaults to 1
+if [ $# -eq 0 ]; then
+	pushing_limit=1
+else
+	re='^[0-9]+$'
+	if ! [[ $1 =~ $re ]]; then
+		echo "ERROR: pushing_limit must be a number" >&2; exit 1
+	fi
+	pushing_limit=$1
+fi
 
 # Get current branch name
 branch_name="$(git symbolic-ref HEAD 2>/dev/null)" ||
