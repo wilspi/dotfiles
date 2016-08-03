@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+$PWD=$(pwd)
 if [ $# -eq 0 ]; then
 	# defaults to 5 minutes
 	interval=18000
@@ -12,4 +13,5 @@ else
 fi
 
 # Push git commits after every $interval
-watch -n $interval ./git_push_commits.sh
+# Run in background
+watch -n $interval "$PWD/scripts/git_push_commits.sh" &
