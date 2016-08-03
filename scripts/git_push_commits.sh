@@ -56,14 +56,15 @@ if [ "$commits_ahead" -gt "0" -a $(( $commits_ahead-$push_commits )) -gt "-1" ];
 		echo "At commit: " ${commit_sha:0:7} " Pushing commits: " $push_commits
 	fi
 	git push origin $commit_sha:$branch_name --quiet
+
+	# Back to where HEAD was
+	git checkout $branch_name --quiet
 else
 	if [ "$verbose" = true ]; then
 		echo "Origin is upto date."
+		exit 1
 	fi
 fi
-
-# Back to where HEAD was
-git checkout $branch_name --quiet
 
 # Show Git log graph
 if [ "$verbose" = true ]; then
