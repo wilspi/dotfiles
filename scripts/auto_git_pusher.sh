@@ -37,6 +37,7 @@ fi
 if [ "$commits_behind" != "0" ]; then
 	if [ "$verbose" = true ]; then
 		echo "Behind origin by " $commits_behind " commits. Please pull your branch."
+		exit 1
 	fi
 fi
 
@@ -48,11 +49,11 @@ else
 fi
 
 # Push commits
-if [ $(( $commits_ahead-$push_commits )) -gt "-1" ]; then
+if [ "$commits_ahead" -gt "0" -a $(( $commits_ahead-$push_commits )) -gt "-1" ]; then
 	git checkout HEAD~$(( $commits_ahead-$push_commits )) --quiet
 	commit_sha="$(git rev-parse HEAD)"
 	if [ "$verbose" = true ]; then
-		echo "At commit: " $commit_sha " Pushing commits: " $push_commits
+		echo "At commit: " ${commit_sha:0:7} " Pushing commits: " $push_commits
 	fi
 	git push origin $commit_sha:$branch_name --quiet
 else
