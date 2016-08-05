@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 ## Mac OS Aliases
 
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
