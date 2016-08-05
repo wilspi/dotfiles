@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Bash Aliases
 
 # navigation
@@ -40,3 +41,6 @@ alias jsonify='python -c '"'"'import json, sys; input_str=sys.argv[1]; print jso
 # kill all the tabs in chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
 alias chrome_kill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+
+# show pretty git log
+alias git_log_pretty="git log --pretty=oneline --abbrev-commit --graph --decorate --all"
