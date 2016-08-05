@@ -5,3 +5,6 @@ source ~/.bash_functions
 if [[ -e ~/.secrets ]]; then
   source ~/.secrets
 fi
+
+# files to ignore globally for git
+git config --global core.excludesfile '~/.git_global_ignore'
