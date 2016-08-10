@@ -27,7 +27,7 @@ brew install youtube-dl
 brew install watch
 
 # sshpass: allows to provide the ssh password without using the prompt
-# homebrew doesnt allow installing sshpass
+# no homebrew package, as homebrew doesnt allow installing sshpass
 # http://linux.die.net/man/1/sshpass
 curl -O -L http://downloads.sourceforge.net/project/sshpass/sshpass/1.05/sshpass-1.05.tar.gz && tar xvzf sshpass-1.05.tar.gz
 cd sshpass-1.05
@@ -37,6 +37,9 @@ sudo make install
 cd ..
 rm -rf sshpass-1.05
 rm -rf sshpass-1.05.tar.gz
+
+# awk, gawk: 
+brew install gawk
 
 
 
