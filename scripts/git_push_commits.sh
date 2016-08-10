@@ -24,14 +24,26 @@ if [ "$verbose" = true ]; then
 	echo "You are on branch: " $branch_name
 fi
 
+user_plus_repo=git ls-remote --get-url | awk '{ sub(/.+com\//, ""); print  }'
+remote_branch_exists=git ls-remote --heads git@github.com:$user_plus_repo $branch_name | wc -l
+remote_branch_exists=true
+
 # Get number of commits ahead
-commits_ahead="$(git rev-list origin/$branch_name..HEAD --count)"
+if [ "$remote_branch_exists" = true ]; then
+	commits_ahead="$(git rev-list origin/$branch_name..HEAD --count)"
+else
+	commits_ahead="$(git rev-list origin/master..HEAD --count)"
+fi
 if [ "$verbose" = true ]; then
 	echo "Commits ahead: " $commits_ahead
 fi
 
 # Get number of commits behind
-commits_behind="$(git rev-list HEAD..origin/$branch_name --count)"
+if [ "$remote_branch_exists" = true ]; then
+	commits_behind="$(git rev-list HEAD..origin/$branch_name --count)"
+else
+	commits_behind="0"
+fi
 if [ "$verbose" = true ]; then
 	echo "Commits behind: " $commits_behind
 fi
