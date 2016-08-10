@@ -33,8 +33,10 @@ alias egrep='egrep --color=auto'
 alias ssh_pub_key="cat ~/.ssh/id_rsa.pub"
 
 # URL-encode strings
+# usage: urlencode "<string>"
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 # string to json
+# usage: jsonify "<string>"
 alias jsonify='python -c '"'"'import json, sys; input_str=sys.argv[1]; print json.loads(input_str.replace("\n", "\\n").replace("\r", "\\r"));'"'"' '
 
 
@@ -44,3 +46,7 @@ alias chrome_kill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exte
 
 # show pretty git log
 alias git_log_pretty="git log --pretty=oneline --abbrev-commit --graph --decorate --all"
+
+# delete all contents of file
+# usage: empty_file <filepath>
+alias empty_file='echo "" > '

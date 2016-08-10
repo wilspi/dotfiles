@@ -30,3 +30,8 @@ alias show_desktop="defaults write com.apple.finder CreateDesktop -bool true && 
 
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# Show untracted files in git diff
+alias git_diff_untracked="less $(git ls-files --others --exclude-standard)"
+# Show git diff for staged files
+alias git_diff_cached="git diff --cached"
