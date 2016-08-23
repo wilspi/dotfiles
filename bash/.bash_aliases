@@ -50,3 +50,8 @@ alias git_log_pretty="git log --pretty=oneline --abbrev-commit --graph --decorat
 # delete all contents of file
 # usage: empty_file <filepath>
 alias empty_file='echo "" > '
+
+# Show git diff for untracked files only
+alias git_diff_untracked="less $(git ls-files --others --exclude-standard)"
+# Show git diff for staged files only
+alias git_diff_cached="git diff --cached"
