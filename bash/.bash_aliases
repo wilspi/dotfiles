@@ -9,6 +9,7 @@ alias now='date +"%T"'
 alias now_time=now
 alias now_date='date +"%d-%m-%Y"'
 alias week='date +%V'
+alias date_cp='date +"%T" | pbcopy'
 
 # vim
 alias svim='sudo vim'
