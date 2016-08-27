@@ -41,6 +41,14 @@ rm -rf sshpass-1.05.tar.gz
 # awk, gawk: 
 brew install gawk
 
+# thefuck
+# https://github.com/nvbn/thefuck
+brew install thefuck
+
+# wifi-password
+# https://github.com/rauchg/wifi-password
+brew install wifi-password
+
 
 
 

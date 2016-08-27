@@ -1,0 +1,3 @@
+[submodule "scripts/git-auto-push"]
+	path = scripts/git-auto-push
+	url = https://github.com/wilspi/git-auto-push
