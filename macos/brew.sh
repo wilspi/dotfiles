@@ -10,8 +10,6 @@ brew update
 brew upgrade --all
 
 
-
-
 # Formulae / Tool
 # ---------------
 
@@ -49,7 +47,16 @@ brew install thefuck
 # https://github.com/rauchg/wifi-password
 brew install wifi-password
 
+# Caskroom for Homebrew : Installing MacOS Applications
+# https://caskroom.github.io/
+brew tap caskroom/cask
 
+# Mac OS Applications
+brew cask install google-chrome
+brew cask install sublime-text3
+brew cask install vlc
+
+# ---------------
 
 
 # Remove outdated versions from the cellar.
