@@ -11,6 +11,13 @@ mkdir -p "$old_dotfiles/bash"
 for file in $bash_files; do
 	mv ~/$file "$old_dotfiles/bash"
 	ln -s "$PWD/bash/$file" ~/$file
+done
+
 
 # reload bash_profile
 source ~/.bash_profile
+
+# Run OSX specific script
+if [ "$(uname -s)" = "Darwin" ]; then
+	$PWD/macos/.init
+fi

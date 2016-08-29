@@ -1,14 +1,6 @@
 #!/usr/bin/env bash
 
 
-### Bash Configs
-# Load Bash Profile
-~/.bash_profile
-
-# Load Bash RC
-~/.bashrc
-
-
 ### Setup Packages
 # Install Homebrew: The missing package manager for OS X
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -17,9 +9,7 @@
 ./brew.sh
 
 
+
 ### Setup SSH
 # Generate new ssh key
 ssh-keygen -t rsa -b 4096 -C $email
-
-
-
