@@ -1,14 +1,12 @@
 #!/usr/bin/env bash
 
-$PWD=$(pwd)
-
-source ~/.bash_aliases
-source ~/.bash_functions
-source ~/.bash_exports
+source $PWD/bash/.bash_aliases
+source $PWD/bash/.bash_functions
+source $PWD/bash/.bash_exports
 
 # Use .secrets for stuff that you don't want to share in your public, versioned repo.
 if [[ -e ~/.secrets ]]; then
-  source ~/.secrets
+	source ~/.secrets
 fi
 
 # checks if OS is OSX

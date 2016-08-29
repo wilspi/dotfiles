@@ -9,8 +9,8 @@ mkdir -p "$old_dotfiles/bash"
 
 # symlink bash files in home directory
 for file in $bash_files; do
-	mv ~/$file "$old_dotfiles/bash"
-	ln -s "$PWD/bash/$file" ~/$file
+	[ -f ~/$file ] && mv ~/$file "$old_dotfiles/bash"
+	[ -f $PWD/bash/$file ] && ln -s "$PWD/bash/$file" ~/$file
 done
 
 
