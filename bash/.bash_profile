@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
-source $cwd/bash/.bash_aliases
-source $cwd/bash/.bash_functions
-source $cwd/bash/.bash_exports
+[ ! -z "$cwdb" ] && cwdb="$(pwd -P)"
+
+source $cwdb/.bash_aliases
+source $cwdb/.bash_functions
+source $cwdb/.bash_exports
 
 # Use .secrets for stuff that you don't want to share in your public, versioned repo.
 if [[ -e ~/.secrets ]]; then
@@ -11,7 +13,7 @@ fi
 
 # checks if OS is OSX
 if [ "$(uname -s)" = "Darwin" ]; then
-	source "$cwd/macos/.aliases"
+	source "$cwdb/../macos/.aliases"
 fi
 
 # files to ignore globally for git

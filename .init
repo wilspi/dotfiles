@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 cwd="$(pwd)"
+cwdb="$cwd/bash"
 bash_files=".bashrc .bash_profile .bash_aliases"
 
 # creating $old_dotfiles for backup of any existing dotfiles
@@ -10,7 +11,7 @@ mkdir -p "$old_dotfiles/bash"
 # symlink bash files in home directory
 for file in $bash_files; do
 	[ -f ~/$file ] && mv ~/$file "$old_dotfiles/bash"
-	[ -f $cwd/bash/$file ] && ln -s "$cwd/bash/$file" ~/$file
+	[ -f $cwdb/$file ] && ln -s "$cwdb/$file" ~/$file
 done
 
 
