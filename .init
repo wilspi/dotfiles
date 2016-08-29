@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-$PWD="$(pwd)"
+cwd="$(pwd)"
 bash_files=".bashrc .bash_profile .bash_aliases"
 
 # creating $old_dotfiles for backup of any existing dotfiles
@@ -10,7 +10,7 @@ mkdir -p "$old_dotfiles/bash"
 # symlink bash files in home directory
 for file in $bash_files; do
 	[ -f ~/$file ] && mv ~/$file "$old_dotfiles/bash"
-	[ -f $PWD/bash/$file ] && ln -s "$PWD/bash/$file" ~/$file
+	[ -f $cwd/bash/$file ] && ln -s "$cwd/bash/$file" ~/$file
 done
 
 
@@ -19,5 +19,5 @@ source ~/.bash_profile
 
 # Run OSX specific script
 if [ "$(uname -s)" = "Darwin" ]; then
-	$PWD/macos/.init
+	$cwd/macos/.init
 fi
