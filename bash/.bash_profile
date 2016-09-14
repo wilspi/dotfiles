@@ -16,5 +16,10 @@ if [ "$(uname -s)" = "Darwin" ]; then
 	source "$cwd/macos/.aliases"
 fi
 
+# Git autocomplete
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+	. $(brew --prefix)/etc/bash_completion
+fi
+
 # files to ignore globally for git
 git config --global core.excludesfile '$cwd/.git_global_ignore'

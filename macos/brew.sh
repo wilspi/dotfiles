@@ -47,6 +47,13 @@ brew install thefuck
 # https://github.com/rauchg/wifi-password
 brew install wifi-password
 
+# ffmpeg: video editing utility
+# https://ffmpeg.org/ffmpeg.html
+brew install ffmpeg
+
+# git bash autocomplete
+brew install bash-completion
+
 # Caskroom for Homebrew : Installing MacOS Applications
 # https://caskroom.github.io/
 brew tap caskroom/cask
