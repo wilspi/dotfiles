@@ -34,5 +34,5 @@ function extract() {
 # Extract audio from video
 # Credit: http://www.labnol.org/internet/useful-ffmpeg-commands/28490/
 function get_audio() {
-	ffmpeg -i "$1" -vn -ab 256 "$1.mp3"
+	ffmpeg -i "$1" -vn -ab 256 "${1%.*}.mp3"
 }
