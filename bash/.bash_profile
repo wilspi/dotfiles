@@ -14,6 +14,7 @@ fi
 # checks if OS is OSX
 if [ "$(uname -s)" = "Darwin" ]; then
 	source "$cwd/macos/.aliases"
+	source "$cwd/macos/.functions"
 fi
 
 # Git autocomplete
