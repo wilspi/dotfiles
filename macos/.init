@@ -6,14 +6,14 @@ if [[ $? != 0 ]] ; then
 	# Install Homebrew: The missing package manager for OS X
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	# Install brew packages
-	./brew.sh
+	$cwd/macos/brew.sh
 else
 	brew update
 	brew upgrade --all
 	brew cleanup
 fi
 
-
+email="abc@gmail.com"
 ### Setup SSH
 # Generate new ssh key if ~/.ssh doesn't exist
 [ ! -d ~/.ssh ] && ssh-keygen -t rsa -b 4096 -C $email
