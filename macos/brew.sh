@@ -13,6 +13,13 @@ brew upgrade --all
 # Formulae / Tool
 # ---------------
 
+# Caskroom for Homebrew : Installing MacOS Applications
+# https://caskroom.github.io/
+brew tap caskroom/cask
+
+# Required for sshfs
+brew cask install osxfuse
+
 # sshfs: mount remote file systems over SSH
 brew install homebrew/fuse/sshfs
 
@@ -54,9 +61,6 @@ brew install ffmpeg
 # git bash autocomplete
 brew install bash-completion
 
-# Caskroom for Homebrew : Installing MacOS Applications
-# https://caskroom.github.io/
-brew tap caskroom/cask
 
 # Mac OS Applications
 brew cask install google-chrome
