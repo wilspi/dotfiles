@@ -24,3 +24,10 @@ fi
 
 # files to ignore globally for git
 git config --global core.excludesfile '$cwd/.git_global_ignore'
+
+# TODO: move somewhere but not here
+# export PATH="$HOME/.cargo/bin:$PATH"
+
+# SSH Agent
+# Read: https://www.ssh.com/ssh/add
+ssh-add -K ~/.ssh/id_rsa

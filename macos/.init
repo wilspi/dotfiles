@@ -13,7 +13,10 @@ else
 	brew cleanup
 fi
 
-email="abc@gmail.com"
+email="sourabh.deokar@gmail.com"
 ### Setup SSH
 # Generate new ssh key if ~/.ssh doesn't exist
 [ ! -d ~/.ssh ] && ssh-keygen -t rsa -b 4096 -C $email
+
+
+# Setup git and sshpass for git
