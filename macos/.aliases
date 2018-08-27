@@ -12,7 +12,7 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
 alias ls_clean_up="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 
-# Recursively delete `.DS_Store` files
+# Recursively deletes `.DS_Store` file from current directory and subdirectories
 alias clean_up="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Empty the Trash on all mounted volumes and the main HDD.
