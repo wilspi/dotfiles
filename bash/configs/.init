@@ -1,0 +1,20 @@
+
+# Configs
+# TODO: make sure pkgs are installed before copying configs
+# TODO: handle linux distributions, desktop managers
+
+# Terminator
+# Copy config
+cp terminator ~/.config/terminator/config
+# Default terminal
+gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/terminator
+gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"
+
+
+# Gnome Dock
+# Alternatively can be changed via dconf-editor
+gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-position LEFT
+gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode FIXED
+gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 64
+gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items true
