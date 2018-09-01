@@ -6,12 +6,19 @@ sudo apt-get upgrade
 # Install packages
 sudo apt-get install -y chromium-browser build-essential python-pip python3-pip curl
 
+# Install git
+sudo apt-get install -y git
+
+# dconf-editor
+# For gnome customisation
+sudo apt-get install -y dconf-editor
+
 # Remove Libreoffice, we have google-docs
 sudo apt-get remove --purge libreoffice*
 sudo apt-get clean
 sudo apt-get autoremove
 
-# Install atom 
+# Install atom
 sudo add-apt-repository ppa:webupd8team/atom -y
 sudo apt-get update
 sudo apt-get install -y atom
@@ -43,8 +50,8 @@ sudo npm install -g react-native-cli
 # https://stackoverflow.com/a/19533853
 
 
-# Install Dropbox
-sudo apt install nautilus-dropbox
+# Install Dropbox plugin for autosync in nautilus
+sudo apt install -y nautilus-dropbox
 
 # Terminator
-sudo apt-get install terminator
+sudo apt-get install -y terminator
