@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 # Update pkg lists information from repositories, and update pkgs
 sudo apt-get update

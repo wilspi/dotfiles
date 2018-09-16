@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 # URL-encode strings
 # usage: urlencode "<string>"

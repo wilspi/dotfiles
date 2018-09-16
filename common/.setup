@@ -1,6 +1,7 @@
+#!/usr/bin/env bash
 # Setup across environments
 
-$email=$1
+email=$1
 
 # Make code directory
 mkdir -p ~/Documents/CodeStuff/

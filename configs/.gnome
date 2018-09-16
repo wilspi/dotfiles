@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # gsettings = Gnome Settings
 # Alternatively can be changed via dconf-editor
 

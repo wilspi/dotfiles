@@ -30,7 +30,6 @@ done
 
 # Generate bash files
 mkdir "$cwd/bash"
-touch "$cwd/bash/.bash_profile" "$cwd/bash/.bash_aliases"
 
 # Run OS specific configs and scripts
 if [ "$(uname -s)" = "Darwin" ]; then
@@ -38,14 +37,14 @@ if [ "$(uname -s)" = "Darwin" ]; then
   $cwd/common/.setup $email
   $cwd/configs/.init "$cwd/configs" "MACOS"
   $cwd/macos/brew.sh
-  cat $cwd/macos/.aliases >> $cwd/bash/.bash_aliases
-  $cwd/common/aliases/.init >> $cwd/bash/.bash_aliases
+  cat $cwd/macos/.aliases > $cwd/bash/.bash_aliases
+  echo "$($cwd/common/aliases/.init $cwd/common/aliases)" >> $cwd/bash/.bash_aliases
 elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
   echo "INFO: 'LINUX' identified"
   $cwd/common/.setup $email
   $cwd/configs/.init "$cwd/configs" "LINUX"
   $cwd/debian/apt.sh
-  $cwd/common/aliases/.init >> $cwd/bash/.bash_aliases
+  echo "$($cwd/common/aliases/.init $cwd/common/aliases)" > $cwd/bash/.bash_aliases
 else
   echo "ERR: Unidentified system found, probably a low grade one"
 fi
