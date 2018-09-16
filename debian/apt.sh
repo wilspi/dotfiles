@@ -4,7 +4,7 @@ sudo apt-get update
 sudo apt-get upgrade
 
 # Install packages
-sudo apt-get install -y chromium-browser build-essential python-pip python3-pip curl
+sudo apt-get install -y chromium-browser build-essential python-pip python3-pip curl vim virtualenv
 
 # Install git
 sudo apt-get install -y git

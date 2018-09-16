@@ -1,0 +1,8 @@
+
+# URL-encode strings
+# usage: urlencode "<string>"
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+
+# string to json
+# usage: jsonify "<string>"
+alias jsonify='python -c '"'"'import json, sys; input_str=sys.argv[1]; print json.loads(input_str.replace("\n", "\\n").replace("\r", "\\r"));'"'"' '

@@ -1,5 +1,48 @@
 #!/usr/bin/env bash
-# Useful Functions and shortcuts
+# Bash Aliases and Functions
+
+# navigation
+alias ..='cd ..'
+
+# date/time/week
+alias now='date +"%r"'
+alias now_time=now
+alias now_date='date +"%d-%m-%Y"'
+alias week='date +%V'
+alias date_cp='date +"%T" | pbcopy'
+
+# vim
+alias svim='sudo vim'
+alias edit='vim'
+
+# wget: resume downloads by default
+alias wget='wget -c'
+
+# list all files colorized in long format, including dot files
+alias la="ls -laF ${colorflag}"
+# list only directories
+alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
+
+# always enable colored `grep` output
+# note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Code Directory
+alias codedir='cd ~/Documents/CodeStuff/'
+
+# SSH public key
+alias ssh_pub_key="cat ~/.ssh/id_rsa.pub"
+
+# kill all the tabs in chrome to free up memory
+# [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
+alias chrome_kill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+
+# delete all contents of file
+# usage: empty_file <filepath>
+alias empty_file='echo "" > '
+
 
 # Create a new directory and enter it
 function mkd() {

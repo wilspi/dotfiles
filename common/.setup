@@ -1,0 +1,4 @@
+# Setup across environments
+
+# Make code directory
+mkdir -p ~/Documents/CodeStuff/
