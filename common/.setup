@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Setup across environments
+
+email=$1
+
+# Make code directory
+[ ! -d ~/Documents/CodeStuff/ ] && mkdir -p ~/Documents/CodeStuff/
+
+### Setup SSH
+# Generate new ssh key if ~/.ssh doesn't exist
+[ ! -d ~/.ssh ] && ssh-keygen -t rsa -b 4096 -C $email
+
+# TODO: Setup git and sshpass for git

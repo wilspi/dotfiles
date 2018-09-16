@@ -1,17 +1,21 @@
 #!/usr/bin/env bash
 
-# Homebrew
-# Install command line tools for osx
+# Homebrew: Setup Packages
+which -s brew
+if [[ $? != 0 ]] ; then
+	echo "INFO: Installing Homebrew: The missing package manager for OS X"
+	# Install Homebrew
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+	echo "INFO: Homebrew found, checking for updates"
+	brew update
+	# brew upgrade --all
+fi
 
-# Make sure we’re using the latest Homebrew.
-brew update
+###########################################################
 
-# Upgrade any already-installed formulae.
-brew upgrade --all
-
-
-# Formulae / Tool
-# ---------------
+# Install Formulae / Tools
+echo "INFO: Installing brew formulae"
 
 # Caskroom for Homebrew : Installing MacOS Applications
 # https://caskroom.github.io/
@@ -54,7 +58,7 @@ cd ..
 rm -rf sshpass-1.05
 rm -rf sshpass-1.05.tar.gz
 
-# awk, gawk: 
+# awk, gawk:
 brew install gawk
 
 # thefuck
@@ -77,9 +81,6 @@ brew install bash-completion
 brew cask install google-chrome
 #brew cask install sublime-text3
 brew cask install vlc
-
-# ---------------
-
 
 # Remove outdated versions from the cellar.
 brew cleanup

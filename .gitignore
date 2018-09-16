@@ -1,2 +1,5 @@
 # Secrets file
 .secrets
+
+# .setup will generate files in bash
+bash/*
