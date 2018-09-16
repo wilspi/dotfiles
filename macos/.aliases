@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-## Mac OS Aliases
+## Mac OS Aliases and Functions
 
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup;'
@@ -33,3 +33,14 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # thefuck
 eval "$(thefuck --alias FUCK)"
+
+
+# Change Mac address for OSX
+# Credit: http://osxdaily.com/2008/01/17/how-to-spoof-your-mac-address-in-mac-os-x/
+function mod_mac_addr() {
+	sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport
+	airport -z
+
+	random_mac_address="$(printf '%02X-%02X-%02X-%02X-%02X-%02X\n' $[RANDOM%256] $[RANDOM%256] $[RANDOM%256] $[RANDOM%256] $[RANDOM%256] $[RANDOM%256])"
+	sudo ifconfig en0 ether $random_mac_address
+}
