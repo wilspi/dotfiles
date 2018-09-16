@@ -5,6 +5,7 @@ system=$2
 
 echo "INFO: Running configs for $system"
 if [ $system = "MACOS" ]; then
+  # Run macos configs
   $cwd/.macos
 elif [ $system = "LINUX" ]; then
   # Copy Terminator config

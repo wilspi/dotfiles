@@ -6,7 +6,6 @@ echo "INFO: Personalisation of your laptop has started ..."
 # Get email
 echo "Enter your email id:"
 read email
-# export email=$email
 echo "INFO: Noted your email id as: $email"
 
 # Get file path for current working directory
@@ -28,8 +27,8 @@ for file in $bash_files; do
 	[ -f ~/$file ] && mv ~/$file "~/dotfiles_old/bash"
 done
 
-# Generate bash files
-mkdir "$cwd/bash"
+# Create directory if doesnt exist
+[ ! -d "$cwd/bash" ] && mkdir "$cwd/bash"
 
 # Run OS specific configs and scripts
 if [ "$(uname -s)" = "Darwin" ]; then
@@ -58,6 +57,7 @@ echo "INFO: Personalisation completed"
 
 # Reload .bash_profile .bash_aliases
 # source ~/.bash_profile
+# TODO: confirm if it works
 source ~/.bash_aliases
 
 echo "BYE: Have a good day"
