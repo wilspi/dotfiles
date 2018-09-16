@@ -46,6 +46,9 @@ alias chrome_kill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exte
 # usage: empty_file <filepath>
 alias empty_file='echo "" > '
 
+# Open /etc/hosts
+alias hosts='sudo $EDITOR /etc/hosts'
+
 ###########################################################
 # Functions
 

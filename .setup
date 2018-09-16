@@ -33,20 +33,32 @@ done
 # Run OS specific configs and scripts
 if [ "$(uname -s)" = "Darwin" ]; then
   echo "INFO: 'MACOS' identified"
-  $cwd/common/.setup $email
-  $cwd/configs/.init "$cwd/configs" "MACOS"
   $cwd/macos/brew.sh
+  # TODO: cwd passed should be cwd+common
+  $cwd/common/.setup $cwd $email
+  $cwd/configs/.init "$cwd/configs" "MACOS"
   cat $cwd/macos/.aliases > $cwd/bash/.bash_aliases
   echo "$($cwd/common/aliases/.init $cwd/common/aliases)" >> $cwd/bash/.bash_aliases
+  # Git autocomplete
+  if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+  fi
 elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
   echo "INFO: 'LINUX' identified"
-  $cwd/common/.setup $email
-  $cwd/configs/.init "$cwd/configs" "LINUX"
   $cwd/debian/apt.sh
+  $cwd/common/.setup $cwd $email
+  $cwd/configs/.init "$cwd/configs" "LINUX"
   echo "$($cwd/common/aliases/.init $cwd/common/aliases)" > $cwd/bash/.bash_aliases
 else
   echo "ERR: Unidentified system found, probably a low grade one"
+  exit 1
 fi
+
+# TODO: Use secrets
+# # Use .secrets for stuff that you don't want to share in your public, versioned repo.
+# if [[ -e ~/.secrets ]]; then
+# 	source ~/.secrets
+# fi
 
 # Symlink bash files in home directory
 for file in $bash_files; do
