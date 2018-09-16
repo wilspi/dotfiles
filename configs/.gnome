@@ -4,11 +4,8 @@
 # TODO: make sure pkgs are installed before copying configs
 # TODO: handle linux distributions, desktop managers
 
-
-# Terminator
-# Copy config
-cp terminator ~/.config/terminator/config
-# Default terminal
+# Default terminal: Terminator
+# Note: Install pkg first
 gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/terminator
 gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"
 

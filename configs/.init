@@ -1,0 +1,16 @@
+
+$cwd=$1
+$system=$2
+
+if [ $2 = "MACOS" ]; then
+  echo "INFO: Running configs for $2"
+  $cwd/.macos
+elif [ $2 = "LINUX" ]; then
+  echo "INFO: Running configs for $2"
+  # Copy Terminator config
+  cp $cwd/terminator ~/.config/terminator/config
+  # Run gnome configs
+  $cwd/.gnome
+else
+  echo "ERR: Unidentified param for system: $2"
+fi

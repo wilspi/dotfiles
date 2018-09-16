@@ -1,9 +1,10 @@
 # Setup across environments
 
+$email=$1
+
 # Make code directory
 mkdir -p ~/Documents/CodeStuff/
 
-email="sourabh.deokar@gmail.com"
 ### Setup SSH
 # Generate new ssh key if ~/.ssh doesn't exist
 [ ! -d ~/.ssh ] && ssh-keygen -t rsa -b 4096 -C $email

@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # Bash Aliases and Functions
 
+###########################################################
+# Aliases
+
 # navigation
 alias ..='cd ..'
 
@@ -43,6 +46,8 @@ alias chrome_kill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exte
 # usage: empty_file <filepath>
 alias empty_file='echo "" > '
 
+###########################################################
+# Functions
 
 # Create a new directory and enter it
 function mkd() {

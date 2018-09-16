@@ -1,29 +1,64 @@
 #!/usr/bin/env bash
 
-# get file path
-file_path="`dirname \"$0\"`"
-file_path="`( cd \"$file_path\" && pwd -P )`"
-if [ -z "$file_path" ] ; then
+echo "Hello Batman 😉"
+echo "INFO: Personalisation of your laptop has started ..."
+
+# Get email
+echo "Enter your email id:"
+read email
+# export email=$email
+echo "INFO: Noted your email id as: $email"
+
+# Get file path for current working directory
+cwd="`(cd $(dirname \"$0\") && pwd -P )`"
+if [ -z "$cwd" ] ; then
+  echo "ERR: File path found empty"
   exit 1
 fi
-export cwd="$file_path"
-echo "export dotfiles_path=\"$file_path\"" > ~/.dotfiles_path
-bash_files=".bashrc .bash_profile .bash_aliases"
 
-# creating $old_dotfiles for backup of any existing dotfiles
-old_dotfiles=~/dotfiles_old	
-mkdir -p "$old_dotfiles/bash"
+# Files to be generated
+# All aliases are moved to .bash_aliases
+# All other configs are moved to .bash_profile
+bash_files=".bash_profile .bash_aliases"
 
-# symlink bash files in home directory
+# Backup any existing bash files
+echo "INFO: Moving old dotfiles files to '~/dotfiles_old/bash'"
+mkdir -p "~/dotfiles_old/bash"
 for file in $bash_files; do
-	[ -f ~/$file ] && mv ~/$file "$old_dotfiles/bash"
+	[ -f ~/$file ] && mv ~/$file "~/dotfiles_old/bash"
+done
+
+# Generate bash files
+mkdir "$cwd/bash"
+touch "$cwd/bash/.bash_profile" "$cwd/bash/.bash_aliases"
+
+# Run OS specific configs and scripts
+if [ "$(uname -s)" = "Darwin" ]; then
+  echo "INFO: 'MACOS' identified"
+  $cwd/common/.setup $email
+  $cwd/configs/.init "$cwd/configs" "MACOS"
+  $cwd/macos/brew.sh
+  cat $cwd/macos/.aliases >> $cwd/bash/.bash_aliases
+  $cwd/common/aliases/.init >> $cwd/bash/.bash_aliases
+elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
+  echo "INFO: 'LINUX' identified"
+  $cwd/common/.setup $email
+  $cwd/configs/.init "$cwd/configs" "LINUX"
+  $cwd/debian/apt.sh
+  $cwd/common/aliases/.init >> $cwd/bash/.bash_aliases
+else
+  echo "ERR: Unidentified system found, probably a low grade one"
+fi
+
+# Symlink bash files in home directory
+for file in $bash_files; do
 	[ -f $cwd/bash/$file ] && ln -s "$cwd/bash/$file" ~/$file
 done
 
-# Run OSX specific script
-if [ "$(uname -s)" = "Darwin" ]; then
-	$cwd/macos/.init
-fi
+echo "INFO: Personalisation completed"
 
-# reload bash_profile
-source ~/.bash_profile
+# Reload .bash_profile .bash_aliases
+# source ~/.bash_profile
+source ~/.bash_aliases
+
+echo "BYE: Have a good day"

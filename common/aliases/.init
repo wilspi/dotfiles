@@ -1,0 +1,11 @@
+
+$cwd=$1
+
+echo "INFO: Copying .git aliases"
+cat $cwd/.git
+
+echo "INFO: Copying .python aliases"
+cat $cwd/.python
+
+echo "INFO: Copying .bash aliases"
+cat $cwd/.bash

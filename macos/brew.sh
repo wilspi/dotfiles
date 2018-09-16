@@ -3,9 +3,11 @@
 # Homebrew: Setup Packages
 which -s brew
 if [[ $? != 0 ]] ; then
-	# Install Homebrew: The missing package manager for OS X
+	echo "INFO: Installing Homebrew: The missing package manager for OS X"
+	# Install Homebrew
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
+	echo "INFO: Homebrew found, checking for updates"
 	brew update
 	# brew upgrade --all
 fi
@@ -13,6 +15,7 @@ fi
 ###########################################################
 
 # Install Formulae / Tools
+echo "INFO: Installing brew formulae"
 
 # Caskroom for Homebrew : Installing MacOS Applications
 # https://caskroom.github.io/
