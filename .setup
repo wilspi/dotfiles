@@ -4,8 +4,7 @@ echo "Hello Batman 😉"
 echo "INFO: Personalisation of your laptop has started ..."
 
 # Get email
-echo "Enter your email id:"
-read email
+read -t 10 -p "Enter your email id (timeout: 10 secs):" email
 echo "INFO: Noted your email id as: $email"
 
 # Get file path for current working directory

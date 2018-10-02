@@ -11,11 +11,11 @@ email=$2
 
 # Setup SSH
 # Generate new ssh key if ~/.ssh doesn't exist
-[ ! -d ~/.ssh ] && ssh-keygen -t rsa -b 4096 -C $email
+[ "$email" != "" ] && [ ! -d ~/.ssh ] && ssh-keygen -t rsa -b 4096 -C $email
 
 # SSH Agent
 # Read: https://www.ssh.com/ssh/add
-ssh-add -K ~/.ssh/id_rsa
+# ssh-add -K ~/.ssh/id_rsa
 
 # Files to ignore globally for git
 git config --global core.excludesfile '$cwd/.git_global_ignore'
