@@ -1,6 +1,6 @@
 # dotfiles
 
-### Clone and run .init to get started:  
+### Clone and run .setup to get started:  
 ```
 git clone https://github.com/wilspi/dotfiles
 cd dotfiles

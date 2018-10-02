@@ -35,7 +35,7 @@ if [ "$(uname -s)" = "Darwin" ]; then
   echo "INFO: 'MACOS' identified"
   $cwd/macos/brew.sh
   # TODO: cwd passed should be cwd+common
-  $cwd/common/.setup $cwd $email
+  $cwd/common/.init $cwd $email
   $cwd/configs/.init "$cwd/configs" "MACOS"
   cat $cwd/macos/.aliases > $cwd/bash/.bash_aliases
   echo "$($cwd/common/aliases/.init $cwd/common/aliases)" >> $cwd/bash/.bash_aliases
@@ -46,7 +46,7 @@ if [ "$(uname -s)" = "Darwin" ]; then
 elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
   echo "INFO: 'LINUX' identified"
   $cwd/debian/apt.sh
-  $cwd/common/.setup $cwd $email
+  $cwd/common/.init $cwd $email
   $cwd/configs/.init "$cwd/configs" "LINUX"
   echo "$($cwd/common/aliases/.init $cwd/common/aliases)" > $cwd/bash/.bash_aliases
 else
