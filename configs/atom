@@ -1,0 +1,4 @@
+# TODO: Setup atom configs
+
+# vim bindings
+apm install vim-mode-plus
