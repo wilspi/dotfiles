@@ -22,9 +22,9 @@ bash_files=".bash_profile .bash_aliases"
 
 # Backup any existing bash files
 echo "INFO: Moving old dotfiles files to '~/dotfiles_old/bash'"
-mkdir -p "~/dotfiles_old/bash"
+[ ! -d ~/dotfiles_old/bash ] && mkdir -p ~/dotfiles_old/bash
 for file in $bash_files; do
-	[ -f ~/$file ] && mv ~/$file "~/dotfiles_old/bash"
+	[ -f ~/$file ] && mv ~/$file ~/dotfiles_old/bash
 done
 
 # Create directory if doesnt exist
