@@ -1,13 +1,18 @@
 #!/usr/bin/env bash
 
+RED='\033[0;31m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+NC='\033[0m' # No Color
+
 # Homebrew: Setup Packages
 which -s brew
 if [[ $? != 0 ]] ; then
-	echo "INFO: Installing Homebrew: The missing package manager for OS X"
+	echo -e "${BLUE}INFO:${NC} Installing Homebrew: The missing package manager for OS X"
 	# Install Homebrew
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
-	echo "INFO: Homebrew found, checking for updates"
+	echo -e "${BLUE}INFO:${NC} Homebrew found, checking for updates"
 	brew update
 	# brew upgrade --all
 fi
@@ -15,7 +20,7 @@ fi
 ###########################################################
 
 # Install Formulae / Tools
-echo "INFO: Installing brew formulae"
+echo -e "${BLUE}INFO:${NC} Installing brew formulae"
 
 # Caskroom for Homebrew : Installing MacOS Applications
 # https://caskroom.github.io/

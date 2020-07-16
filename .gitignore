@@ -1,5 +1,6 @@
 # Secrets file
 .secrets
+.idea
 
-# .setup will generate files in bash
+# run_setup.sh will generate files in bash
 bash/*

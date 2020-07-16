@@ -4,7 +4,7 @@
 ```
 git clone https://github.com/wilspi/dotfiles
 cd dotfiles
-./.setup
+./run_setup.sh
 ```
 
 
