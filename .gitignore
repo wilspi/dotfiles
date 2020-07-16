@@ -2,5 +2,5 @@
 .secrets
 .idea
 
-# run_setup.sh will generate files in bash
+# hello.sh will generate files in bash
 bash/*

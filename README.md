@@ -1,10 +1,10 @@
 # dotfiles
 
-### Clone and run `run_setup.sh` to setup dotfiles:  
+### Clone and run `hello.sh` to setup dotfiles:  
 ```
 git clone https://github.com/wilspi/dotfiles
 cd dotfiles
-./run_setup.sh
+./hello.sh
 ```
 
 

@@ -16,7 +16,7 @@ echo ""
 # Get email (timeout 10 secs)
 read -t 10 -p "Enter your email id [$USERNAME@system]:" email
 if [ -z "$email" ]; then
-  echo ""
+	echo ""
 fi
 email=${email:-"$USERNAME@system"} # default
 echo -e "${BLUE}INFO:${NC} noted your email id as: $email"
@@ -24,8 +24,8 @@ echo -e "${BLUE}INFO:${NC} noted your email id as: $email"
 # Get file path for current working directory
 cwd="`(cd $(dirname \"$0\") && pwd -P )`"
 if [ -z "$cwd" ] ; then
-  echo -e "${RED}ERR:${NC} file path found empty"
-  exit 1
+	echo -e "${RED}ERR:${NC} file path found empty"
+	exit 1
 fi
 
 # Files to be generated
@@ -46,18 +46,18 @@ done
 # Identify OS
 system="SYSTEM"
 if [ "$(uname -s)" = "Darwin" ]; then
-  system="MACOS"
+	system="MACOS"
 elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
-  if [ "${$(hostnamectl | grep -i 'operating system'):2:4}" = "Arch Linux" ]; then
-    system="ARCH LINUX"
-  else
-    # other linux is UBUNTU for me
-    echo -e "${BLUE}INFO:${NC} 'UBUNTU' assumed"
-    system="UBUNTU"
-  fi
+	if [ "${$(hostnamectl | grep -i 'operating system'):2:4}" = "Arch Linux" ]; then
+		system="ARCH LINUX"
+	else
+		# other linux is UBUNTU for me
+		echo -e "${BLUE}INFO:${NC} 'UBUNTU' assumed"
+		system="UBUNTU"
+	fi
 else
-  echo -e "${RED}ERR:${NC} unidentified system found"
-  exit 1
+	echo -e "${RED}ERR:${NC} unidentified system found"
+	exit 1
 fi
 echo -e "${BLUE}INFO:${NC} '$system' identified"
 
