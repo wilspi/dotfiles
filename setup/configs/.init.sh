@@ -34,3 +34,7 @@ elif [ $SYSTEM = "LINUX" ]; then
 else
 	echo -e "${RED}ERR:${NC} unidentified param for system: $SYSTEM"
 fi
+
+# Run common
+$CWD/zsh
+$CWD/pyenv

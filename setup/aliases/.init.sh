@@ -10,3 +10,5 @@ SYSTEM=$1
 
 echo -e "${BLUE}INFO:${NC} copying aliases $SYSTEM"
 cat $CWD/git $CWD/python $CWD/bash
+
+#TODO: SYSTEM specific aliases
