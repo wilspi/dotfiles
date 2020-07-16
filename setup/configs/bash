@@ -5,9 +5,6 @@ export EDITOR="vim"
 
 # Set bash history to unlimited
 # https://stackoverflow.com/a/19533853
-
-# Setting unlimited history
-# https://stackoverflow.com/questions/9457233/unlimited-bash-history
 HISTSIZE=-1
 HISTFILESIZE=-1
 
