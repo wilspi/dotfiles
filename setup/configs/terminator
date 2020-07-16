@@ -3,19 +3,19 @@
   focus = system
   title_transmit_bg_color = "#444444"
   window_state = fullscreen
+  borderless = True
 [keybindings]
 [layouts]
   [[default]]
     [[[child0]]]
       fullscreen = True
-      last_active_term = 1c5b6f8e-626f-4de3-8173-e80f3560defc
       last_active_window = True
       maximised = False
       order = 0
       parent = ""
       position = 0:0
       size = 1920, 1080
-      title = wilspi@wilsbuntu: ~/Documents/CodeStuff
+      title = wilspi@terminator
       type = Window
     [[[child1]]]
       order = 0
@@ -39,30 +39,30 @@
       order = 0
       parent = child2
       profile = myprofile
+      command = cd ~/Documents/CodeStuff; zsh
       type = Terminal
-      uuid = 1c5b6f8e-626f-4de3-8173-e80f3560defc
     [[[terminal4]]]
       order = 1
       parent = child2
       profile = myprofile
+      command = htop; zsh
       type = Terminal
-      uuid = 5c0e0038-aa06-4456-8875-fc9ffda087f7
     [[[terminal6]]]
       order = 0
       parent = child5
       profile = myprofile
+      command = cd ~/Documents/CodeStuff; zsh
       type = Terminal
-      uuid = b7dcfc63-c7ff-444a-a8b0-9bed26b6dc6c
     [[[terminal7]]]
       order = 1
       parent = child5
       profile = myprofile
       type = Terminal
-      uuid = 0ef55290-282d-427a-a6b3-c6545c5a9a3b
 [plugins]
 [profiles]
   [[default]]
     background_image = None
   [[myprofile]]
     background_image = None
-    foreground_color = "#00ff00"
+    foreground_color = "#FFFFFF"
+    scrollback_infinite = True
