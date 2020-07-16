@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+function cleanup() {
+  sudo nix-collect-garbage -d
+  paccache -ruk0
+  paccache -rk1
+  yay -Sc
+  sudo pacman -Rns $(pacman -Qtdq)
+}
+
+# find files bigger than 200Mb
+alias find_big_files="sudo find / -type f -size +200M -exec ls -lh {} \;";
+
+# List running services
+alias running_services="sudo systemctl list-units --state=running";

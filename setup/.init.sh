@@ -16,7 +16,7 @@ EMAIL=$2
 echo -e "${BLUE}INFO:${NC} CodeStuff directory created"
 
 # Packages
-$CWD/packages/.init $SYSTEM
+$CWD/packages/.init.sh $SYSTEM
 
 # Setup SSH
 # Generate new ssh key if ~/.ssh doesn't exist
@@ -34,7 +34,7 @@ git config --global core.excludesfile '$CWD/.git_global_ignore'
 # export PATH="$HOME/.cargo/bin:$PATH"
 
 # Copy aliases
-echo "$($CWD/aliases/.init $SYSTEM)" > $CWD/../bash/.bash_aliases
+echo "$($CWD/aliases/.init.sh $SYSTEM)" > $CWD/../bash/.bash_aliases
 
 # Configs
-$CWD/configs/.init $SYSTEM
+$CWD/configs/.init.sh $SYSTEM

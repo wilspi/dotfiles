@@ -62,7 +62,7 @@ fi
 echo -e "${BLUE}INFO:${NC} '$system' identified"
 
 # Run setup
-$cwd/setup/.init $system $email
+$cwd/setup/.init.sh $system $email
 
 
 # TODO: Use secrets
