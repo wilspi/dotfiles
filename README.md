@@ -1,6 +1,6 @@
 # dotfiles
 
-### Clone and run .setup to get started:  
+### Clone and run `run_setup.sh` to setup dotfiles:  
 ```
 git clone https://github.com/wilspi/dotfiles
 cd dotfiles
