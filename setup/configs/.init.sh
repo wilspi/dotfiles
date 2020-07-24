@@ -28,6 +28,13 @@ elif [ $SYSTEM = "LINUX" ]; then
 	# Copy Terminator config
 	cp $CWD/terminator ~/.config/terminator/config
 
+	# vlc plugins
+	# Credit Skipper: https://github.com/michaelbull/vlc-credit-skipper
+	curl https://raw.githubusercontent.com/michaelbull/vlc-credit-skipper/master/credit-skipper.lua --output credit-skipper.lua
+	mkdir -p ~/.local/share/vlc/lua/extensions/
+	mv credit-skipper.lua ~/.local/share/vlc/lua/extensions/
+	cp $cwd/vlc/credit-skipper.conf ~/.config/vlc/
+
 	# Run gnome configs
 	$CWD/gnome
 
