@@ -6,6 +6,7 @@ sudo pacman -S xorg xorg-server gnome gnome-extra
 #sudo pacman -S xf86-video nvidia nvidia-lts amd-ucode pulseaudio pulseaudio-alsa webext-ublock-origin
 sudo pacman -S guake git bash-completion chromium terminator vnstat ntfs-3g pacman-contrib docker firefox-ublock-origin atom spotify
 sudo pacman -S zsh
+sudo pacman -S obs-studio
 
 # Install yay
 #git clone https://aur.archlinux.org/yay.git
@@ -14,3 +15,5 @@ sudo pacman -S zsh
 #cd .. && rm -rf yay
 
 yay -S postman6-bin clion
+yay -S typora huestacian nix tor-browser spotify
+#yay -S zoom
