@@ -1,4 +1,8 @@
 
+
+https://youtrack.jetbrains.com/issue/IDEA-251536#focus=Comments-27-4550766.0-0
+
+
 git config --global user.email $EMAIL
 git config --global user.name "wilspi"
 
