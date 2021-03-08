@@ -7,3 +7,5 @@ git config --global user.email $EMAIL
 git config --global user.name "wilspi"
 
 sudo pacman -S hugo
+
+https://codeforces.com/blog/entry/67391
