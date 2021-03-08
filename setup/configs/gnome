@@ -20,3 +20,12 @@ gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"
 
 # Sleep timeout when on battery to 120 secs
 #gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 120
+
+# Set defualt wallpaper
+gsettings get org.gnome.desktop.background picture-uri 'file:///home/serrano/Pictures/x.jpg'
+
+# Nautilus - file explorer
+# Configure backspace keyboard shortcut
+# https://askubuntu.com/a/289540
+echo '(gtk_accel_path "<Actions>/ShellActions/Up" "BackSpace")' >> ~/.config/nautilus/accels
+nautilus -q
