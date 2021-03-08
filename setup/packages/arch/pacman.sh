@@ -2,15 +2,19 @@
 
 sudo pacman -Syu
 
-sudo pacman -S xorg xorg-server 
-sudo pacman -S xfce4
+sudo pacman -S xorg
+#sudo pacman -S xfce4
+sudo pacman -S gnome 
+sudo pacman -S nvidia amd-ucode 
 sudo pacman -S pulseaudio pulseaudio-alsa pulseaudio-bluetooth
 
-#sudo pacman -S gnome gnome-extra
-#sudo pacman -S xf86-video nvidia nvidia-lts amd-ucode pulseaudio pulseaudio-alsa webext-ublock-origin
-sudo pacman -S guake git bash-completion chromium terminator vnstat ntfs-3g pacman-contrib docker firefox-ublock-origin atom spotify
+#sudo pacman -S webext-ublock-origin
+sudo pacman -S guake git bash-completion terminator ntfs-3g pacman-contrib firefox firefox-ublock-origin atom
 sudo pacman -S zsh
-sudo pacman -S obs-studio
+sudo pacman -S obs-studio chromium vnstat net-tools docker
+
+sudo pacman -S gnome-tweak-tool python-nautilus
+
 
 # Install yay
 #git clone https://aur.archlinux.org/yay.git
