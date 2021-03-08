@@ -22,6 +22,14 @@ sudo pacman -S gnome-tweak-tool python-nautilus
 #makepkg -si
 #cd .. && rm -rf yay
 
+sudo pacman -S jdk-openjdk
+yay -S clion
+
+
 yay -S postman6-bin clion
 yay -S typora huestacian nix tor-browser spotify
 #yay -S zoom
+
+
+# Auto download jetbrain plugins
+# https://plugins.jetbrains.com/plugin/download?rel=true&updateId=112365
