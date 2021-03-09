@@ -48,8 +48,8 @@ system="SYSTEM"
 if [ "$(uname -s)" = "Darwin" ]; then
 	system="MACOS"
 elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
-	if [ "${$(hostnamectl | grep -i 'operating system'):2:4}" = "Arch Linux" ]; then
-		system="ARCH LINUX"
+	if [ "$(hostnamectl | grep -i 'operating system')" = "  Operating System: Arch Linux" ]; then
+		system="ARCH"
 	else
 		# other linux is UBUNTU for me
 		echo -e "${BLUE}INFO:${NC} 'UBUNTU' assumed"

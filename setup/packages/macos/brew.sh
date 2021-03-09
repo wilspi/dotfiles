@@ -17,10 +17,9 @@ else
 	# brew upgrade --all
 fi
 
-###########################################################
 
 # Install Formulae / Tools
-echo -e "${BLUE}INFO:${NC} Installing brew formulae"
+#echo -e "${BLUE}INFO:${NC} Installing brew formulae"
 
 # Caskroom for Homebrew : Installing MacOS Applications
 # https://caskroom.github.io/
@@ -40,12 +39,10 @@ brew install youtube-dl
 brew cask install iterm2
 
 # brew install htop
-
-# Install Telnet
 brew install telnet
 
 # For Tree view of folders/files from terminal
-brew install tree
+#brew install tree
 
 # watch: to run command every x seconds
 # https://en.wikipedia.org/wiki/Watch_(Unix)

@@ -12,10 +12,11 @@ SYSTEM=$1
 echo -e "${BLUE}INFO:${NC} running configs for $SYSTEM"
 if [ $SYSTEM = "MACOS" ]; then
 	# Run macos configs
+	echo "do nothing"
 
-elif [ $SYSTEM = "ARCH LINUX" ]; then
+elif [ $SYSTEM = "ARCH" ]; then
 	# Download nix file and setup
-	curl -o setup_nix.sh https://gist.githubusercontent.com/wilspi/847b3794a5dda51a62b8bfd4fd968f3b/raw/setup_nix.sh
+	curl -o $CWD/setup_nix.sh https://gist.githubusercontent.com/wilspi/847b3794a5dda51a62b8bfd4fd968f3b/raw/setup_nix.sh
 	$CWD/setup_nix.sh
 
 	# Copy Terminator config
@@ -23,6 +24,13 @@ elif [ $SYSTEM = "ARCH LINUX" ]; then
 
 	# Run gnome configs
 	$CWD/gnome
+
+	# vlc plugins
+	# Credit Skipper: https://github.com/michaelbull/vlc-credit-skipper
+	curl https://raw.githubusercontent.com/michaelbull/vlc-credit-skipper/master/credit-skipper.lua --output credit-skipper.lua
+	mkdir -p ~/.local/share/vlc/lua/extensions/
+	mv credit-skipper.lua ~/.local/share/vlc/lua/extensions/
+	cp $CWD/vlc/credit-skipper.conf ~/.config/vlc/
 
 elif [ $SYSTEM = "LINUX" ]; then
 	# Copy Terminator config
@@ -33,7 +41,7 @@ elif [ $SYSTEM = "LINUX" ]; then
 	curl https://raw.githubusercontent.com/michaelbull/vlc-credit-skipper/master/credit-skipper.lua --output credit-skipper.lua
 	mkdir -p ~/.local/share/vlc/lua/extensions/
 	mv credit-skipper.lua ~/.local/share/vlc/lua/extensions/
-	cp $cwd/vlc/credit-skipper.conf ~/.config/vlc/
+	cp $CWD/vlc/credit-skipper.conf ~/.config/vlc/
 
 	# Run gnome configs
 	$CWD/gnome

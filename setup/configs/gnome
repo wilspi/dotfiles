@@ -1,15 +1,5 @@
 #!/usr/bin/env bash
 
-function gdrive-dl {
-
-    GDRIVE_FILE_ID=$1
-    DEST_PATH=$2
-
-    curl -c ./cookie -s -L "https://drive.google.com/uc?export=download&id=${GDRIVE_FILE_ID}" > /dev/null
-    curl -Lb ./cookie "https://drive.google.com/uc?export=download&confirm=`awk '/download/ {print $NF}' ./cookie`&id=${GDRIVE_FILE_ID}" -o ${DEST_PATH}
-    rm -f cookie
-}
-
 # gsettings = Gnome Settings
 # Alternatively can be changed via dconf-editor
 
@@ -32,7 +22,16 @@ gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"
 #gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 120
 
 # Set defualt wallpaper
-wget -O ~/Documents/dotfiles/tmp/wallpaper.jpg https://drive.google.com/uc?id=1ArgvKDfCqMa4P5R7MwDQ99KBtUXWKCLD && gsettings get org.gnome.desktop.background picture-uri 'file:///home/wilspi/Documents/dotfiles/tmp/wallpaper.jpg'
+#function gdrive-dl {
+#
+#    GDRIVE_FILE_ID=$1
+#    DEST_PATH=$2
+#
+#    curl -c ./cookie -s -L "https://drive.google.com/uc?export=download&id=${GDRIVE_FILE_ID}" > /dev/null
+#    curl -Lb ./cookie "https://drive.google.com/uc?export=download&confirm=`awk '/download/ {print $NF}' ./cookie`&id=${GDRIVE_FILE_ID}" -o ${DEST_PATH}
+#    rm -f cookie
+#}
+#wget -O ~/Documents/dotfiles/tmp/wallpaper.jpg https://drive.google.com/uc?id=1ArgvKDfCqMa4P5R7MwDQ99KBtUXWKCLD && gsettings get org.gnome.desktop.background picture-uri 'file:///home/wilspi/Documents/dotfiles/tmp/wallpaper.jpg'
 
 # Nautilus - file explorer
 # Configure backspace keyboard shortcut

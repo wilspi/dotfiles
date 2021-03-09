@@ -12,7 +12,7 @@ SYSTEM=$1
 echo -e "${BLUE}INFO:${NC} install packages for $SYSTEM"
 if [ $SYSTEM = "MACOS" ]; then
 	$CWD/macos/brew.sh
-elif [ $SYSTEM = "ARCH LINUX" ]; then
+elif [ $SYSTEM = "ARCH" ]; then
 	$CWD/arch/pacman.sh
 elif [ $SYSTEM = "LINUX" ]; then
 	$CWD/debian/apt.sh

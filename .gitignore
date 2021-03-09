@@ -1,3 +1,7 @@
+# Local files
+tmp/*
+setup_nix.sh
+
 # Secrets file
 .secrets
 .idea

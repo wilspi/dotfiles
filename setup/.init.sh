@@ -12,8 +12,8 @@ SYSTEM=$1
 EMAIL=$2
 
 # Make code directory
-[ ! -d ~/Documents/CodeStuff/ ] && mkdir -p ~/Documents/CodeStuff/
-echo -e "${BLUE}INFO:${NC} CodeStuff directory created"
+[ ! -d ~/Documents/codestuff/ ] && mkdir -p ~/Documents/codestuff/
+echo -e "${BLUE}INFO:${NC} codestuff directory created"
 
 # Packages
 $CWD/packages/.init.sh $SYSTEM

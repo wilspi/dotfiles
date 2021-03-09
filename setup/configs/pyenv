@@ -10,4 +10,4 @@ echo "export PATH=\"$PYENV_DIR/bin:$PATH\"" >> ~/.zshenv
 echo 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshenv
 git clone https://github.com/pyenv/pyenv-virtualenv.git ./plugins/pyenv-virtualenv
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshenv
-exec "$SHELL"
+#exec "$SHELL"
