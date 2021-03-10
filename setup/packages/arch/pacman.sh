@@ -10,7 +10,7 @@ sudo pacman -S pulseaudio pulseaudio-alsa pulseaudio-bluetooth
 
 #sudo pacman -S webext-ublock-origin
 sudo pacman -S guake git bash-completion terminator ntfs-3g pacman-contrib firefox firefox-ublock-origin atom
-sudo pacman -S obs-studio chromium vnstat net-tools docker hugo
+sudo pacman -S obs-studio chromium vnstat net-tools docker hugo redis
 sudo pacman -S gnome-tweak-tool python-nautilus
 
 

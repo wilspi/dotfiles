@@ -39,7 +39,7 @@
       order = 0
       parent = child2
       profile = myprofile
-      command = cd ~/Documents/CodeStuff; zsh
+      command = cd ~/Documents/codestuff; zsh
       type = Terminal
     [[[terminal4]]]
       order = 1
@@ -51,7 +51,7 @@
       order = 0
       parent = child5
       profile = myprofile
-      command = cd ~/Documents/CodeStuff; zsh
+      command = cd ~/Documents/codestuff; zsh
       type = Terminal
     [[[terminal7]]]
       order = 1

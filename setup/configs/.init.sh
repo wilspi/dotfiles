@@ -20,6 +20,7 @@ elif [ $SYSTEM = "ARCH" ]; then
 	$CWD/setup_nix.sh
 
 	# Copy Terminator config
+	mkdir -p ~/.config/terminator/
 	cp $CWD/terminator ~/.config/terminator/config
 
 	# Run gnome configs
@@ -30,6 +31,7 @@ elif [ $SYSTEM = "ARCH" ]; then
 	curl https://raw.githubusercontent.com/michaelbull/vlc-credit-skipper/master/credit-skipper.lua --output credit-skipper.lua
 	mkdir -p ~/.local/share/vlc/lua/extensions/
 	mv credit-skipper.lua ~/.local/share/vlc/lua/extensions/
+	mkdir -p ~/.config/vlc/
 	cp $CWD/vlc/credit-skipper.conf ~/.config/vlc/
 
 elif [ $SYSTEM = "LINUX" ]; then
