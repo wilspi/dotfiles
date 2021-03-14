@@ -31,14 +31,14 @@ fi
 # Files to be generated
 # All aliases are moved to .bash_aliases
 # All other configs are moved to .bash_profile
-bash_files=".zshrc .bash_profile .bash_aliases"
+bash_files=".bash_aliases"
 
 # Backup any existing bash files
-echo -e "${BLUE}INFO:${NC} moving old dotfiles files to '~/dotfiles_old/bash'"
-[ ! -d ~/dotfiles_old/bash ] && mkdir -p ~/dotfiles_old/bash
-for file in $bash_files; do
-	[ -f ~/$file ] && mv ~/$file ~/dotfiles_old/bash
-done
+#echo -e "${BLUE}INFO:${NC} moving old dotfiles files to '~/dotfiles_old/bash'"
+#[ ! -d ~/dotfiles_old/bash ] && mkdir -p ~/dotfiles_old/bash
+#for file in $bash_files; do
+#	[ -f ~/$file ] && mv ~/$file ~/dotfiles_old/bash
+#done
 
 # Create directory if doesnt exist
 [ ! -d "$cwd/bash" ] && mkdir "$cwd/bash"

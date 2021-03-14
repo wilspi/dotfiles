@@ -9,6 +9,6 @@ CWD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 SYSTEM=$1
 
 echo -e "${BLUE}INFO:${NC} copying aliases $SYSTEM"
-cat $CWD/git $CWD/python $CWD/bash
+cat $CWD/git $CWD/python $CWD/bash $CWD/arch
 
 #TODO: SYSTEM specific aliases

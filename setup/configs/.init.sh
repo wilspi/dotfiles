@@ -16,8 +16,8 @@ if [ $SYSTEM = "MACOS" ]; then
 
 elif [ $SYSTEM = "ARCH" ]; then
 	# Download nix file and setup
-	curl -o $CWD/setup_nix.sh https://gist.githubusercontent.com/wilspi/847b3794a5dda51a62b8bfd4fd968f3b/raw/setup_nix.sh
-	$CWD/setup_nix.sh
+	# curl -o $CWD/setup_nix.sh https://gist.githubusercontent.com/wilspi/847b3794a5dda51a62b8bfd4fd968f3b/raw/setup_nix.sh
+	# $CWD/setup_nix.sh
 
 	# Copy Terminator config
 	mkdir -p ~/.config/terminator/
