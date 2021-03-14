@@ -9,8 +9,8 @@ sudo pacman -S nvidia amd-ucode
 sudo pacman -S pulseaudio pulseaudio-alsa pulseaudio-bluetooth
 
 #sudo pacman -S webext-ublock-origin
-sudo pacman -S guake git bash-completion terminator ntfs-3g pacman-contrib firefox firefox-ublock-origin atom
-sudo pacman -S obs-studio chromium vnstat net-tools docker hugo redis
+sudo pacman -S guake git bash-completion terminator ntfs-3g pacman-contrib firefox atom
+sudo pacman -S obs-studio chromium vnstat net-tools docker hugo redis firefox-ublock-origin
 sudo pacman -S gnome-tweak-tool python-nautilus
 
 
@@ -24,13 +24,14 @@ sudo pacman -S jdk-openjdk
 yay -S clion
 
 
-yay -S typora huestacian nix tor-browser spotify
-#yay -S zoom
+yay -S typora huestacean spotify
+#yay -S zoom tor-browser
 
-sudo pacman -S vlc zsh terminator bash-completion
+sudo pacman -S vlc zsh
 sudo pacman -S obs-studio
 yay -S postman6-bin
 
+yay -S nix
 
 # Auto download jetbrain plugins
 # https://plugins.jetbrains.com/plugin/download?rel=true&updateId=112365
