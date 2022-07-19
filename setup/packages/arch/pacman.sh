@@ -29,9 +29,18 @@ yay -S typora huestacean spotify
 
 sudo pacman -S vlc zsh
 sudo pacman -S obs-studio
-yay -S postman6-bin
+yay -S postman6-bin discord
 
 yay -S nix
 
+yay -S brave-bin
+pacman -S htop wget transmission-gtk ttf-roboto ttf-roboto-mono
+
+## Enable multilib, pacman -> parrallel downloads /etc/pacman.conf
+pacman -S steam
+
+
 # Auto download jetbrain plugins
 # https://plugins.jetbrains.com/plugin/download?rel=true&updateId=112365
+
+## Jetbrains config save
