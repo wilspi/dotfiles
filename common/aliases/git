@@ -13,6 +13,9 @@ alias git_diff_untracked="less $(git ls-files --others --exclude-standard)"
 # Show git diff for staged files only
 alias git_diff_cached="git diff --cached"
 
+# Checkout unstaged files only
+alias git_checkout_unstaged="git checkout -- ."
+
 # Get recent branches (ones on which you have worked in your local)
 # Credit https://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
 #alias git_recent="git branch -v --sort=committerdate"
