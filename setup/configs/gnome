@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+# gsettings = Gnome Settings
+# Alternatively can be changed via dconf-editor
+
+# TODO: make sure pkgs are installed before copying configs
+# TODO: handle linux distributions, desktop managers
+
+# Default terminal: Terminator
+# Note: Install pkg first
+gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/terminator
+gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"
+
+# Gnome Dock
+#gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
+#gsettings set org.gnome.shell.extensions.dash-to-dock dock-position LEFT
+#gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode FIXED
+#gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 64
+#gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items true
+
+# Sleep timeout when on battery to 120 secs
+#gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 120
+
+# Set defualt wallpaper
+#function gdrive-dl {
+#
+#    GDRIVE_FILE_ID=$1
+#    DEST_PATH=$2
+#
+#    curl -c ./cookie -s -L "https://drive.google.com/uc?export=download&id=${GDRIVE_FILE_ID}" > /dev/null
+#    curl -Lb ./cookie "https://drive.google.com/uc?export=download&confirm=`awk '/download/ {print $NF}' ./cookie`&id=${GDRIVE_FILE_ID}" -o ${DEST_PATH}
+#    rm -f cookie
+#}
+#wget -O ~/Documents/dotfiles/tmp/wallpaper.jpg https://drive.google.com/uc?id=1ArgvKDfCqMa4P5R7MwDQ99KBtUXWKCLD && gsettings get org.gnome.desktop.background picture-uri 'file:///home/wilspi/Documents/dotfiles/tmp/wallpaper.jpg'
+
+# Nautilus - file explorer
+# Configure backspace keyboard shortcut
+# https://github.com/riclc/nautilus_backspace
+mkdir -p ~/.local/share/nautilus-python/extensions/ && wget -xO ~/.local/share/nautilus-python/extensions/BackspaceBack.py https://raw.githubusercontent.com/riclc/nautilus_backspace/e8ba91d73b98ca845a66841fb82db6eae6e4b596/BackspaceBack.py
+nautilus -q
+
+

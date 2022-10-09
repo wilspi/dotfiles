@@ -1,5 +1,10 @@
+# Local files
+tmp/*
+setup_nix.sh
+
 # Secrets file
 .secrets
+.idea
 
-# .setup will generate files in bash
+# hello.sh will generate files in bash
 bash/*

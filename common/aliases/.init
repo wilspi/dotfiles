@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-cwd=$1
-cat $cwd/git $cwd/python $cwd/bash
