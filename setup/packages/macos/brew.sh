@@ -10,7 +10,9 @@ which -s brew
 if [[ $? != 0 ]] ; then
 	echo -e "${BLUE}INFO:${NC} Installing Homebrew: The missing package manager for OS X"
 	# Install Homebrew
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/"$(whoami)"/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 else
 	echo -e "${BLUE}INFO:${NC} Homebrew found, checking for updates"
 	brew update
