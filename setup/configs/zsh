@@ -19,5 +19,7 @@ echo "plugins=(
 echo "ZSH_THEME=\"robbyrussell\"" >> ~/.zshrc
 
 # make zsh default
-sudo usermod -s /bin/zsh wilspi
+sudo usermod -s /bin/zsh $(whoami)
+# for mac
+# sudo sh -c "echo $(which zsh) >> /etc/shells"
 chsh -s $(which zsh)
