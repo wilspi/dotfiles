@@ -2,9 +2,12 @@
 
 https://youtrack.jetbrains.com/issue/IDEA-251536#focus=Comments-27-4550766.0-0
 
-
-git config --global user.email $EMAIL
+# https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address
+git config --global user.email wilspi@users.noreply.github.com
 git config --global user.name "wilspi"
+
+# https://stackoverflow.com/questions/73876703/what-are-the-pull-rebase-false-pull-ff-true-differences
+git config --global pull.rebase false
 
 sudo pacman -S hugo
 
