@@ -1,0 +1,28 @@
+# yt-dlp defaults. Override per-invocation with flags as usual.
+
+# Best quality mp4 when possible, fall back to whatever is best.
+-f bv*+ba/b
+--merge-output-format mp4
+
+# Where things land
+-o ~/Downloads/yt/%(uploader)s/%(title)s [%(id)s].%(ext)s
+--paths temp:~/Downloads/yt/.tmp
+
+# Metadata worth keeping
+--embed-metadata
+--embed-thumbnail
+--embed-chapters
+--embed-subs
+--sub-langs en.*
+--write-description
+
+# Behaviour
+--continue
+--no-overwrites
+--restrict-filenames
+--concurrent-fragments 4
+--retries 10
+--ignore-errors
+
+# Don't let a huge playlist run away by accident
+--max-downloads 50

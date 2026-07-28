@@ -1,0 +1,46 @@
+{
+  "theme": "One Dark",
+  "buffer_font_family": "Zed Plex Mono",
+  "buffer_font_size": 14,
+  "ui_font_size": 15,
+  "vim_mode": false,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "format_on_save": "on",
+  "tab_size": 2,
+  "soft_wrap": "editor_width",
+  "show_whitespaces": "selection",
+  "terminal": {
+    "shell": "system",
+    "font_size": 13,
+    "working_directory": "current_project_directory"
+  },
+  "project_panel": {
+    "dock": "left"
+  },
+  "languages": {
+    "Python": {
+      "tab_size": 4,
+      "format_on_save": "on",
+      "formatter": { "language_server": { "name": "ruff" } }
+    },
+    "Rust": {
+      "tab_size": 4
+    },
+    "Shell Script": {
+      "tab_size": 2
+    }
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "check": { "command": "clippy" }
+      }
+    }
+  },
+  "file_types": {
+    "TOML": [".mise.toml"]
+  }
+}

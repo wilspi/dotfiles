@@ -1,0 +1,18 @@
+##
+# Gas Mask — "dev"
+# Local development hostnames. Add project entries here rather than editing
+# /etc/hosts by hand, so the mapping survives a rebuild.
+##
+
+127.0.0.1       localhost
+255.255.255.255 broadcasthost
+::1             localhost
+
+# --- local services ---
+127.0.0.1       api.local
+127.0.0.1       app.local
+127.0.0.1       db.local
+
+# --- point a real domain at the local box while testing ---
+# 127.0.0.1     example.com
+# 127.0.0.1     www.example.com

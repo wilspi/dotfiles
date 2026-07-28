@@ -1,0 +1,51 @@
+# macOS CLI packages (homebrew formulae). One per line, # for comments.
+
+# --- core ---
+git
+zsh
+neovim
+tmux
+curl
+wget
+rsync
+coreutils          # gnu ls/date/etc as g-prefixed
+gnu-sed
+gawk
+mas                # mac app store cli, used by packages/mas.txt
+
+# --- searching / navigating ---
+ripgrep            # rg
+fd
+fzf
+bat
+eza                # modern ls
+tree
+jq
+yq
+htop
+btop
+ncdu
+tldr
+
+# --- dev ---
+mise               # the one version manager: node / python / rust / go / java
+uv                 # python packaging + venvs
+gh                 # github cli
+shellcheck
+direnv
+flyctl
+awscli
+lazygit
+lazydocker
+# Docker itself is the `docker-desktop` cask — it ships the CLI, compose and
+# buildx. Do NOT also add the `docker`/`docker-compose` formulae: they install a
+# second, competing copy of the same binaries.
+
+# --- media / net ---
+yt-dlp
+ffmpeg
+imagemagick
+nmap
+mtr
+rclone
+croc               # easy machine-to-machine file transfer

@@ -1,0 +1,22 @@
+; Template copied to ~/.aws/config on first run. Credentials never live in this repo —
+; use SSO (preferred) or put keys in ~/.secrets as env vars.
+;
+;   aws sso login --profile default
+;   aws sts get-caller-identity --profile default
+
+[default]
+region = ap-south-1
+output = json
+cli_pager =
+
+; --- SSO example: fill in and rename ---
+; [sso-session my-org]
+; sso_start_url = https://my-org.awsapps.com/start
+; sso_region = ap-south-1
+; sso_registration_scopes = sso:account:access
+;
+; [profile prod]
+; sso_session = my-org
+; sso_account_id = 123456789012
+; sso_role_name = AdministratorAccess
+; region = ap-south-1

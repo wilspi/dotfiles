@@ -1,0 +1,6 @@
+# Arch Linux — AUR packages (installed with yay, which the module bootstraps if missing).
+
+flyctl-bin
+ollama                 # swap for `ollama-cuda` / `ollama-rocm` if this box has a GPU
+
+# SiteOne Crawler is not packaged — see the "Manual installs" section of notes.md.

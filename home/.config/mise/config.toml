@@ -1,0 +1,32 @@
+# Global runtime defaults. Per-repo pins go in that repo's .mise.toml — mise also
+# reads .nvmrc, .node-version, .python-version and rust-toolchain.toml, so existing
+# repos work untouched.
+#
+#   cd myrepo && mise use node@22      # writes ./.mise.toml, installs, activates
+#   mise install                       # install everything this repo pins
+#   mise ls --current                  # what is active here
+#   mise upgrade                       # bump installed versions
+
+[tools]
+node = "lts"
+python = "3.13"
+rust = "stable"
+# go = "latest"
+# java = "temurin-21"
+
+# Language-level tooling, versioned the same way as the languages.
+uv = "latest"
+pnpm = "latest"
+
+[settings]
+# Per-repo .mise.toml files must be trusted before they run. Keep this on.
+trusted_config_paths = ["~/Documents/CodeStuff"]
+# Compile python from source only when no prebuilt binary exists.
+python.compile = false
+# Install missing versions automatically when entering a directory that pins them.
+not_found_auto_install = true
+experimental = true
+
+[env]
+# Rust: keep cargo/rustup out of $HOME (matches .zshenv)
+CARGO_HOME = "{{env.XDG_DATA_HOME}}/cargo"

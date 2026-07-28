@@ -1,0 +1,7 @@
+# Mac App Store apps: "<id>  # <name>". Requires `mas` and being signed in to the App Store.
+# Find ids with:  mas search "<name>"
+#
+# Only put things here that have no homebrew cask — TickTick, for instance, is a
+# cask, so it lives in brew-casks.txt and not here.
+
+302584613   # Amazon Kindle: Reading App

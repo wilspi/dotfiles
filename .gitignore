@@ -1,10 +1,29 @@
-# Local files
-tmp/*
-setup_nix.sh
+# THIS REPO IS PUBLIC. Nothing private may land here.
 
-# Secrets file
+# Secrets and machine-local state
 .secrets
-.idea
+home/.config/git/config.local
+home/.aws/credentials
+home/.aws/config
+*.local
 
-# hello.sh will generate files in bash
-bash/*
+# The repo manifest lists private repo and org names — it lives in
+# ~/.config/repos.txt, never here. Ignored in case it is ever generated in place.
+repos.txt
+
+# Keys and certs, in case one is ever dropped in by accident
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+*.hst.local
+
+# Scratch
+tmp/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

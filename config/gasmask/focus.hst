@@ -1,0 +1,28 @@
+##
+# Gas Mask — "focus"
+# Blackhole the usual time sinks. Activate while working, switch back to
+# "default" afterwards.
+##
+
+127.0.0.1       localhost
+255.255.255.255 broadcasthost
+::1             localhost
+
+0.0.0.0         news.ycombinator.com
+0.0.0.0         reddit.com
+0.0.0.0         www.reddit.com
+0.0.0.0         old.reddit.com
+0.0.0.0         x.com
+0.0.0.0         www.x.com
+0.0.0.0         twitter.com
+0.0.0.0         www.twitter.com
+0.0.0.0         instagram.com
+0.0.0.0         www.instagram.com
+0.0.0.0         facebook.com
+0.0.0.0         www.facebook.com
+0.0.0.0         youtube.com
+0.0.0.0         www.youtube.com
+0.0.0.0         tiktok.com
+0.0.0.0         www.tiktok.com
+0.0.0.0         netflix.com
+0.0.0.0         www.netflix.com

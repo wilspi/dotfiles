@@ -1,0 +1,63 @@
+# Arch Linux — official repo packages. Headless workstation, reached over Tailscale.
+# No Xorg / desktop environment on purpose.
+
+# --- base ---
+base-devel
+git
+zsh
+neovim
+tmux
+openssh
+man-db
+man-pages
+rsync
+curl
+wget
+unzip
+which
+pacman-contrib     # paccache, checkupdates
+
+# --- searching / navigating ---
+ripgrep
+fd
+fzf
+bat
+eza
+tree
+jq
+yq
+htop
+btop
+ncdu
+tldr
+
+# --- dev ---
+mise               # the one version manager: node / python / rust / go / java
+uv
+github-cli
+shellcheck
+direnv
+aws-cli-v2
+docker
+docker-compose
+docker-buildx
+lazydocker
+
+# --- network ---
+tailscale
+nftables
+nmap
+mtr
+net-tools
+vnstat
+rclone
+croc
+
+# --- fonts (for tmux/nvim glyphs over ssh) ---
+ttf-jetbrains-mono-nerd
+
+# --- media / downloads ---
+yt-dlp
+ffmpeg
+imagemagick
+transmission-cli

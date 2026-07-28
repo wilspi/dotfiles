@@ -1,0 +1,38 @@
+# macOS GUI applications (homebrew casks). One per line, # for comments.
+# Anything that fails is reported at the end of the run, it never aborts the setup.
+
+# --- browsers ---
+arc
+tor-browser
+
+# --- proton ---
+proton-pass
+proton-mail
+protonvpn
+proton-drive
+
+# --- editors / dev ---
+zed
+bruno              # api client (postman replacement)
+ghostty            # terminal (replaces iterm2/terminator)
+docker-desktop
+ollama-app
+
+# --- network / system ---
+tailscale-app
+gas-mask           # /etc/hosts manager
+transmission
+stats              # menubar system monitor
+rectangle          # window snapping
+raycast            # launcher
+
+# --- fonts ---
+font-jetbrains-mono-nerd-font
+
+# --- media / reading ---
+vlc
+spotify
+calibre
+
+# DaVinci Resolve and SiteOne Crawler are not in homebrew (registration wall /
+# GitHub releases only) — see the "Manual installs" section of notes.md.
