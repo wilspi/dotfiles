@@ -71,6 +71,21 @@ Syncthing *is* a good fit for things git is bad at, if you want it later — Cal
 library, scanned documents, screenshots, a plain-notes folder. Keep it pointed at
 those directories specifically, never at `~/Documents/CodeStuff`.
 
+## AI agents
+
+- `~/.claude/skills` holds both symlinks from the skills repo **and real vendor
+  directories** (`cloudflare`, `wrangler`, `web-perf`, `agents-sdk`, …) that came
+  from plugins. The old `install-skills.sh` began with `rm -rf ~/.claude/skills`,
+  which deleted those on every run — they are real directories, so re-running did
+  not bring them back. The installer now prunes only symlinks that point into the
+  skills repo.
+- If a vendor skill and a repo skill ever share a name, the installer skips the
+  repo one and warns rather than clobbering the directory.
+- Agent credentials (`~/.codex/auth.json`, `~/.claude/.credentials.json`) live in
+  the agent dirs, never in a repo. The setup chmods them to 600.
+- Gemini's auth type is in `~/.gemini/settings.json`; the API key itself belongs
+  in `~/.secrets`.
+
 ## Gotchas
 
 - `mise` needs a repo's `.mise.toml` to be trusted before it runs. Paths under

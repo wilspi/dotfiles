@@ -50,6 +50,34 @@ Overwritten files are backed up to `~/.dotfiles-backup/`.
 | `80-system` | macOS `defaults`, or Arch systemd services. |
 | `85-docker` | Arch: docker service + group. macOS: a context pointing at the Arch box. |
 | `90-apps` | Gas Mask hosts files, VLC credit-skipper, AWS config template, Ollama. |
+| `95-ai` | Agent CLIs, shared rules file, skills installed into every agent. |
+
+## AI agents
+
+Claude, Codex and Gemini each read a differently-named instruction file. All three
+are symlinked to one source so the rules can't drift:
+
+| Agent | Reads | → |
+|---|---|---|
+| Claude Code | `~/.claude/CLAUDE.md` | `ai/AGENTS.md` |
+| Codex | `~/.codex/AGENTS.md` | `ai/AGENTS.md` |
+| Gemini CLI | `~/.gemini/GEMINI.md` | `ai/AGENTS.md` |
+
+Edit `ai/AGENTS.md` — never the symlinks.
+
+Skills come from the separate `skills` repo, whose `install-skills.sh` fans out to
+every agent's `skills/` directory. Re-run it after adding or renaming a skill:
+
+```sh
+cd ~/Documents/CodeStuff/skills && ./install-skills.sh
+```
+
+It only removes symlinks pointing back into that repo, so vendor skills installed
+by other means (`cloudflare`, `wrangler`, `web-perf`…) survive a re-run.
+
+Install channels differ by OS — `claude-code`/`codex` casks and the `gemini-cli`
+formula on macOS, global npm packages on mise's node on Arch. The commands you type
+are identical either way.
 
 ## Docker
 

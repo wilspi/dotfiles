@@ -11,6 +11,11 @@ proton-mail
 protonvpn
 proton-drive
 
+# --- ai agents ---
+claude-code
+codex
+# gemini-cli is a formula, not a cask — see brew-formulae.txt
+
 # --- editors / dev ---
 zed
 bruno              # api client (postman replacement)

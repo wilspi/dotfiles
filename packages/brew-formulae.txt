@@ -31,6 +31,7 @@ tldr
 mise               # the one version manager: node / python / rust / go / java
 uv                 # python packaging + venvs
 gh                 # github cli
+gemini-cli         # claude-code and codex are casks — see brew-casks.txt
 shellcheck
 direnv
 flyctl
