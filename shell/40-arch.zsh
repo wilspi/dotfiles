@@ -23,5 +23,3 @@ alias running='systemctl list-units --state=running'
 alias failed='systemctl --failed'
 alias jctl='journalctl -xe'
 alias jf='journalctl -fu'      # follow a unit: jf nginx
-alias localip="ip -4 -brief addr show | awk '\$1 != \"lo\" {print \$1, \$3}'"
-alias ip='curl -fsS https://ifconfig.me; echo'

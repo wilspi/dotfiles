@@ -1,9 +1,5 @@
 [[ "$OSTYPE" == darwin* ]] || return 0
 
-# --- ip ---
-alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
-alias localip='ipconfig getifaddr en0'
-
 # --- housekeeping ---
 alias update='softwareupdate -i -a; brew update && brew upgrade && brew cleanup; mise upgrade'
 alias cleanup='find . -type f -name ".DS_Store" -print -delete'

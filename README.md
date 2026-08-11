@@ -92,6 +92,18 @@ dctxl               # list contexts
 Docker on macOS is the `docker-desktop` cask **only**. Adding the `docker` or
 `docker-compose` formulae installs a second competing copy of the same binaries.
 
+## Network helpers
+
+```sh
+myip                         # public IP address
+localip                      # local, non-loopback IPv4 addresses
+lan                          # discover devices on the active LAN with nmap
+lan 192.168.1.0/24           # scan an explicit subnet
+```
+
+`lan` infers the default interface and subnet on macOS and Arch. It uses the
+`nmap` package already included in both package lists.
+
 ## Keeping repos in sync across machines
 
 Git, not file sync.
