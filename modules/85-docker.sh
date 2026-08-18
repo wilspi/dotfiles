@@ -30,6 +30,26 @@ fi
 
 # ------------------------------------------------------------------ macos ---
 if is_macos; then
+	# Docker Desktop owns ~/.docker and puts its bundled CLI plugins there. Our
+	# shell points DOCKER_CONFIG at the XDG location, so make both paths resolve
+	# to the same directory; otherwise compose/buildx disappear from the CLI.
+	DOCKER_DESKTOP_CONFIG="$HOME/.docker"
+	DOCKER_XDG_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/docker"
+
+	if [ -L "$DOCKER_XDG_CONFIG" ] && [ "$(readlink "$DOCKER_XDG_CONFIG")" = "$DOCKER_DESKTOP_CONFIG" ]; then
+		skip "docker config bridge"
+	elif [ -e "$DOCKER_XDG_CONFIG" ] || [ -L "$DOCKER_XDG_CONFIG" ]; then
+		warn "$DOCKER_XDG_CONFIG already exists and is not linked to $DOCKER_DESKTOP_CONFIG"
+		warn "Docker Desktop plugins may be missing while DOCKER_CONFIG points there"
+	elif [ -d "$DOCKER_DESKTOP_CONFIG" ]; then
+		run mkdir -p "$(dirname "$DOCKER_XDG_CONFIG")"
+		run ln -s "$DOCKER_DESKTOP_CONFIG" "$DOCKER_XDG_CONFIG" \
+			&& ok "docker config bridge: $DOCKER_XDG_CONFIG -> $DOCKER_DESKTOP_CONFIG" \
+			|| warn "could not link Docker's XDG config path"
+	else
+		warn "$DOCKER_DESKTOP_CONFIG does not exist — open Docker Desktop once, then re-run this module"
+	fi
+
 	if ! have docker; then
 		warn "docker cli not found — it comes with the docker-desktop cask; open it once to finish setup"
 		exit 0

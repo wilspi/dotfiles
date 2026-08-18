@@ -91,6 +91,9 @@ dctxl               # list contexts
 
 Docker on macOS is the `docker-desktop` cask **only**. Adding the `docker` or
 `docker-compose` formulae installs a second competing copy of the same binaries.
+The Docker module bridges `$XDG_CONFIG_HOME/docker` to Docker Desktop's
+`~/.docker` directory so its bundled `compose` and `buildx` CLI plugins remain
+visible while `DOCKER_CONFIG` uses the XDG path.
 
 ## Network helpers
 
@@ -140,6 +143,10 @@ Do **not** put `~/Documents/CodeStuff` in Syncthing — see `notes.md`.
 machines. Each repo pins its own versions in its own `.mise.toml`; mise also reads
 existing `.nvmrc`, `.node-version`, `.python-version` and `rust-toolchain.toml`,
 so nothing needs migrating.
+
+Idiomatic Node and Python version files are explicitly enabled in the global
+mise settings. A project's `.nvmrc`, `.node-version`, or `.python-version`
+therefore overrides the global fallback when you enter that project.
 
 ```sh
 cd myrepo

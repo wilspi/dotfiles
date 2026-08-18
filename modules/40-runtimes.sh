@@ -26,7 +26,10 @@ if ! have mise; then
 	have mise || die "mise installed but not on PATH — check ~/.local/bin"
 fi
 
-info "installing global runtime versions from ~/.config/mise/config.toml"
+MISE_CONFIG="${MISE_GLOBAL_CONFIG_FILE:-${XDG_CONFIG_HOME:-$HOME/.config}/mise/config.toml}"
+[ -r "$MISE_CONFIG" ] || die "mise config not found at $MISE_CONFIG — run the dotfiles module before runtimes"
+
+info "installing global runtime versions from $(tildify "$MISE_CONFIG")"
 run mise install || warn "some runtimes failed to install"
 run mise reshim  >/dev/null 2>&1 || true
 

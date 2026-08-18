@@ -19,6 +19,10 @@ uv = "latest"
 pnpm = "latest"
 
 [settings]
+# Legacy per-project version files are opt-in in mise. Keep these enabled so
+# existing .nvmrc/.node-version and .python-version files override the global
+# fallbacks above when entering a project.
+idiomatic_version_file_enable_tools = ["node", "python"]
 # Per-repo .mise.toml files must be trusted before they run. Keep this on.
 trusted_config_paths = ["~/Documents/CodeStuff"]
 # Compile python from source only when no prebuilt binary exists.
